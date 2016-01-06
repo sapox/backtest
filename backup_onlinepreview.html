@@ -1,0 +1,975 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<link rel="image_src" type="image/jpeg" href="http://www.scholastic.com/onlinepreview/images/fall2013-librarian-preview.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Online Preview | Scholastic.com</title>
+<meta property="og:image" content="http://www.scholastic.com/onlinepreview/new_images2/preview2.jpg" />
+<meta name="og:description" content="Visit with our editorial team from our trade imprints as they reveal the new books Scholastic will be publishing in the upcoming season!" />
+<script src = "code/jquery-1.10.2.min.js"></script>
+<script src = "code/jquery.easing.1.3.js"></script>
+<script src = "code/jquery-migrate-1.2.1.min.js"></script>
+<script src = "code/jquery.imgpreload.min.js"></script>
+<script src = "code/jquery-ui.js"></script>
+<script src = "code/share.js"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+
+<link rel="stylesheet" type="text/css" href="lp.css" />
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="shareStyle.css" />
+<link rel="canonical" href="https://scholastic.com" />
+<style>
+	#header{
+		position: absolute;
+		left: 0px;
+		top: 1px;
+		z-index: 500;
+	}
+	#header img{
+		width:985px;
+		height:175px;
+	}
+	#header p{
+
+		font-family: "Menphis";
+	}
+	#title{
+		position: absolute;
+		top:-19px;
+		left:110px;
+		font-family: "Menphis";
+		color:white;
+		font-size: 50px;
+		text-shadow:1px 1px #000;
+	}
+	#subtext{
+		position: absolute;
+		top:81px;
+		left:198px;
+		font-family: "Menphis";
+		font-size:22px;
+	}
+	@font-face {
+    font-family: "Menphis";
+    src: url("fonts/26165_MPM_____.ttf");
+	}
+	body.schlTeachers4o #schlMainContent, body.schlTeachers4o #content{
+		background-color:none;
+		border:none;
+		padding:none;
+		border-radius:none;
+	}
+
+</style>
+<script type="text/javascript">
+
+$(document).ready(function () {
+
+
+	var share_button_left = new Share(".share-button-left", {
+  		title:       "Online Preview | Scholastic.com",
+  		description: "Visit with our editorial team from our trade imprints as they reveal the new books Scholastic will be publishing in the upcoming season!",
+  		image:      "http://www.scholastic.com/onlinepreview/new_images2/preview2.jpg",
+      	ui: {
+        	flyout: "top center",
+        	button_text: "SHARE"
+      	},
+      	networks: {
+    		email: {
+      	enabled: true,
+      	title:    "Online Preview | Scholastic.com",
+      	description:    "Visit with our editorial team from our trade imprints as they reveal the new books Scholastic will be publishing in the upcoming season!%0D%0Ahttp://www.scholastic.com/onlinepreview/"
+   	 	}
+  		}
+    });
+
+
+	$(".catalogButton").mousedown(function(e) {
+		// document.location.href='http://edelweiss.abovethetreeline.com/CatalogOverview.aspx?catalogID=332398';
+		window.open('http://edelweiss.abovethetreeline.com/CatalogOverview.aspx?catalogID=3770644', '_blank');
+	});
+	$(".orderButton").mousedown(function(e) {
+		window.open('Order-Form-2016-Spring-Preview.xls', '_blank');
+	});
+	$(".faqButton").mousedown(function(e) {
+		window.open('OnlinePreviewFAQ.pdf', '_blank');
+    });
+	$(".giveawayButton").mousedown(function(e) {
+		window.open('http://dialedin.com/scholastic17/giveaways/springpreview', '_blank');
+    });
+	$(".twitter").mousedown(function(e) {
+		window.open('https://twitter.com/'+$(this).attr('id'), '_blank');
+	});
+	$(".close").mousedown(function(e) {
+		lpClose()
+	});
+	//clean body styles
+	$("body.schlTeachers4o #schlMainContent, body.schlTeachers4o #content").css({
+    'background-color':'transparent',
+    'border': 'none',
+    'padding': 'none',
+    '-moz-border-radius': 'none',
+    '-webkit-border-radius': 'none',
+    'border-radius': 'none',
+	});
+	//buttonHolder actions
+	$("#buttonHolder .share-button .sharer-0").css({'order-radius': 0});
+	$(".share-button-left label").css({'background-color':'#90a3bc','color':'#FFF','font-size':17,'font-weight':'normal','font-family':'Arial, Helvetica, sans-serif','padding':10});
+	$("#buttonHolder .share-button-left label").css({'background-color':'#90a3bc','color':'#FFF','font-size':24,'font-weight':'normal','font-family':'Arial, Helvetica, sans-serif','padding':10});
+	$("#schlMainContent").css({'background-color':'transparent','border':'none'});
+
+});
+
+/*not used on microsite-2074
+	var theInterval
+	var slideCount = 1
+	var isMoving = false
+	$.imgpreload(['new_images2/slide1.jpg','new_images2/slide2.jpg','new_images2/slide3.jpg','new_images2/slide4.jpg','new_images2/slide5.jpg'],
+		{
+   	 each: function()
+   	 {
+   	 },
+    all: function()
+   	 {
+		 $("#rightArrow").css('visibility','visible')
+		$("#leftArrow").css('visibility','visible')
+		 $("#slideHolder").append('<img id="slide1" class="mainVideo" src="new_images2/slide1.jpg" width="960" height="310" style="position:absolute; left:0px; top:0px; cursor:pointer" />');
+		 $("#slide1").css('opacity',0);
+		$("#slide1").animate({
+			opacity:1
+			},{
+			duration: 500,
+			complete: function(){
+				theInterval = setInterval(forwardAdvance,5000);
+			}
+		})
+	 }
+	});
+	$("#rightArrow").bind('mousedown', function(e) {
+		if (isMoving == false) {
+			clearInterval(theInterval);
+			isMoving= true
+		var prevSlide = slideCount
+		slideCount++
+		if (slideCount>5) {
+			slideCount = 1
+		}
+		$("#slideHolder").append('<img id="slide'+slideCount+'" class="mainVideo" src="new_images2/slide'+slideCount+'.jpg" width="960" height="310" style="position:absolute; left:960px; top:0px; cursor:pointer" />');
+		$("#slide"+prevSlide).animate({
+			left:-960
+			},{
+			duration: 500,
+			complete: function(){
+				$(this).remove();
+			}
+		})
+		$("#slide"+slideCount).animate({
+			left:0
+			},{
+			duration: 500,
+			complete: function(){
+				isMoving= false
+			}
+		})
+		}
+	});
+	function forwardAdvance() {
+		if (isMoving == false) {
+			isMoving= true
+		var prevSlide = slideCount
+		slideCount++
+		if (slideCount>5) {
+			slideCount = 1
+		}
+		$("#slideHolder").append('<img id="slide'+slideCount+'" class="mainVideo" src="new_images2/slide'+slideCount+'.jpg" width="960" height="310" style="position:absolute; left:960px; top:0px; cursor:pointer" />');
+		$("#slide"+prevSlide).animate({
+			left:-960
+			},{
+			duration: 500,
+			complete: function(){
+				$(this).remove();
+			}
+		})
+		$("#slide"+slideCount).animate({
+			left:0
+			},{
+			duration: 500,
+			complete: function(){
+				isMoving= false
+			}
+		})
+		}
+	}
+	$("#leftArrow").bind('mousedown', function(e) {
+		if (isMoving == false) {
+			clearInterval(theInterval);
+			isMoving= true
+		var prevSlide = slideCount
+		slideCount--
+		if (slideCount<1) {
+			slideCount = 5
+		}
+		$("#slideHolder").append('<img id="slide'+slideCount+'" class="mainVideo" src="new_images2/slide'+slideCount+'.jpg" width="960" height="310" style="position:absolute; left:-960px; top:0px; cursor:pointer" />');
+		$("#slide"+prevSlide).animate({
+			left:960
+			},{
+			duration: 500,
+			complete: function(){
+				$(this).remove();
+			}
+		})
+		$("#slide"+slideCount).animate({
+			left:0
+			},{
+			duration: 500,
+			complete: function(){
+				isMoving= false
+			}
+		})
+		}
+	});
+	$(".videoClass").css('visibility','visible');
+	$(".videoClass").hide()
+
+
+	/*
+	var LP_DONE = false;
+	function loadFAQ() {
+		if ( !LP_DONE ) {
+			jQuery('<div id="LP_overlay"></div>').appendTo('body');
+			LP_DONE = true;
+		}
+		LPoverlay();
+		jQuery('#LP_overlay, #lpFAQ').show();
+	}
+
+	function LPoverlay() {
+  		var arrayPageSize = getPageSize();
+  		var arrayPageScroll = getPageScroll();
+  		var h = arrayPageSize[1] + arrayPageScroll[1];
+  		jQuery("#LP_overlay").css({height: h + 'px'});
+	}
+
+	function lpClose() {
+		jQuery('#LP_overlay, #lpFAQ').hide();
+	}
+	$("#slideHolder").bind('mousedown', function(e) {
+		if (slideCount==1) {
+			makeVideoBackground('mainVideo')
+		} else if (slideCount==2) {
+			makeVideoBackground('pictureButton')
+		} else if (slideCount==3) {
+			makeVideoBackground('chapterButton')
+		} else if (slideCount==4) {
+			makeVideoBackground('middleButton')
+		} else if (slideCount==5) {
+			makeVideoBackground('youngButton')
+		}
+	});
+	$("#chapterButton, #middleButton, #pictureButton, #youngButton").mousedown(function(e) {
+        makeVideoBackground($(this).attr('id'))
+    });*/
+	/*function makeVideoBackground(thePick) {
+		if (thePick=='pictureButton') {
+			$("#pictureVideo").show()
+		} else if (thePick=="chapterButton") {
+			$("#chapterVideo").show()
+		} else if (thePick=="middleButton") {
+			$("#middleVideo").show()
+		} else if (thePick=="youngButton") {
+			$("#youngVideo").show()
+		} else {
+			$("#mainVideoDisplay").show()
+		}
+		// $(".theVideo").css('top',Math.round(($(window).height()/2)-291))
+		$(".blackOverlay").css('opacity',.5);
+		$(".blackOverlay").bind('mousedown',function(e) {
+			closeVideoBackground()
+		});
+		$(".close2").css('opacity',0);
+		$(".close2").bind('mousedown',function(e) {
+			closeVideoBackground()
+		});
+		$(".blackOverlay").css('opacity',0);
+		$(".theVideo").css('opacity',0);
+		$(".blackOverlay").animate({
+			opacity:.5
+			},{
+			duration: 250,
+			complete: function(){
+				$(".theVideo").animate({
+					opacity:1
+					},{
+					duration: 250,
+					complete: function(){
+					}
+				})
+			}
+		})
+	}
+	function closeVideoBackground() {
+		$(".blackOverlay").unbind('mousedown');
+		$(".close2").unbind('mousedown');
+		$(".videoClass").hide()
+	}
+}); */
+</script>
+<!-- jquery-ui -->
+<script type="text/javascript">
+
+	$(function () {
+	    $("#tabs").tabs();
+
+	    
+	$(function () {
+
+	    $("#tabs").tabs();
+	    /* tabs */
+		$('#tabName1').click(function(){
+		$('#tabData1').show();
+		for(var i = 0; i<= $('#tabName > a').length ; i++){
+			$('#tabName > a').eq(i).removeClass("_active");
+		}
+		$('#tabName > a').eq(0).addClass("_active");
+		$('#tabData2').hide();
+		$('#tabData3').hide();
+		$('#tabData4').hide();
+	});
+	$('#tabName2').click(function(){
+		$('#tabData1').hide();
+		$('#tabData2').show();
+		for(var i = 0; i<= $('#tabName > a').length ; i++){
+			$('#tabName > a').eq(i).removeClass("_active");
+		}
+		$('#tabName > a').eq(1).addClass("_active");
+		$('#tabData3').hide();
+		$('#tabData4').hide();
+	});
+	$('#tabName3').click(function(){
+		$('#tabData1').hide();
+		$('#tabData2').hide();
+		$('#tabData3').show();
+		for(var i = 0; i<= $('#tabName > a').length ; i++){
+			$('#tabName > a').eq(i).removeClass("_active");
+		}
+		$('#tabName > a').eq(2).addClass("_active");
+		$('#tabData4').hide();
+	});
+	$('#tabName4').click(function(){
+		$('#tabData1').hide();
+		$('#tabData2').hide();
+		$('#tabData3').hide();
+		$('#tabData4').show();
+		for(var i = 0; i<= $('#tabName > a').length ; i++){
+			$('#tabName > a').eq(i).removeClass("_active");
+		}
+		$('#tabName > a').eq(3).addClass("_active");
+	});
+	var link = location.href;
+    $('link[rel="canonical"]').attr('href', link);
+	});
+	//prevent sending to top when click on the tabs
+	$('a.tab-launcher').click(function(e)
+	{
+    // Special stuff to do when this link is clicked...
+
+    // Cancel the default action
+    e.preventDefault();
+	});
+});
+</script>
+	
+
+<style type="text/css">
+body {
+	background-color: #eaf1f4;
+}
+.videoClass {
+	visibility:hidden;
+}
+.twitter {
+	position:absolute; top:765px; cursor:pointer
+}
+</style>
+<!-- thumbs styles -->
+<style type="text/css">
+    /**********************************************
+      Styles for page
+    **********************************************/
+    #mainVideo {
+	    box-sizing: border-box;
+	    padding: 15px;
+    	float: left;
+    	width: 980px;
+    }
+
+    #mainVideo div {
+    	float: left;
+    }
+
+    #mainVideo .buttons-wrapper {
+    	margin: 15px 0;
+    	width: 100%;
+    }
+
+    #mainVideo .buttons-wrapper .tab-launcher {
+    	background-color: #e7e7e7;
+    	font-size: 14px;
+    	padding: 15px;
+    }
+
+    #mainVideo .buttons-wrapper .tab-launcher._active {
+    	background-color: #fff;
+    	color: #f00;
+    }
+
+	#videoWrapper {
+	    width: 480px;
+	}
+
+	#tab_container{
+		position:absolute;
+		left:724px;
+		top:61px;
+	}
+
+	#tab-data{
+		max-height: 540px;
+    	max-width: 234px;
+    	overflow: auto;
+    	overflow-x: hidden;
+	}
+
+	.tablist{
+		height: 370px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		width: 465px;
+	}
+
+	#videoInfo {
+	    float: left;
+	    width: 687px;
+	    height: 140px;
+	    background: #E7E7E7;
+	    padding-left: 20px;
+	}
+
+	.playlist-item {
+	    float: left;
+	    width: 220px;
+	    /*height: 100px; */
+	    background-color: #FFF;
+	    font-size: 80%;
+	    padding: 5px;
+	    margin: 0px 2px 0px 2px;
+	    cursor: pointer;
+	    border-bottom: 1px solid #ccc;
+	}
+	.playlist-item img {
+	    float: left;
+	    width: 40%;
+	    padding-right: 5px;
+	}
+	.playlist-item span p {
+	  	/*white-space: nowrap;*/
+	  	width: 200px;   
+	  	margin-left: 5px;
+	  	font-weight: bold;               
+	  	overflow: hidden;              /* "overflow" value must be different from "visible" */ 
+	  	/*text-overflow: ellipsis;*/
+	}
+
+	.playlist-item:hover {
+	    background-color: #53c1e1;
+	    color:#000;
+	}
+	
+	.selected{
+		background-color: #53c1e1!important;
+	}
+
+	#tabData1{
+		display:none;
+	}
+	#tabData2{
+		display:none;
+	}#tabData3{
+		display:none;
+	}#tabData4{
+		display:none;
+	}
+	#thumb{
+		padding-left: 29%;
+    	padding-top: 5%;
+	}
+	#playlist-caption{
+		text-align:center;
+	}
+	#playlist-caption > span {
+		width: 180px;
+		min-height: 150px;
+	}
+	.so_cial{
+		margin-left: 34%;
+	}	
+	#pin{
+		width: 48px;
+		height: 48px;
+		border-radius: 14px;
+		background-image: url("new_images2/socialmediaicons18.jpg");
+		background-position: 290px 181px, center;
+		background-size: 360px;
+		margin-left: 2px;
+	}
+	#twi{
+		width: 48px;
+		height: 48px;
+		border-radius: 14px;
+		background-image: url("new_images2/socialmediaicons18.jpg");
+		background-position: 290px -3px, center;
+		background-size: 360px;
+		margin-left: 2px;
+	}
+	#goo{
+		width: 48px;
+		height: 48px;
+		border-radius: 14px;
+		background-image: url("new_images2/socialmediaicons18.jpg");
+		background-position: 176px 119px, center;
+		background-size: 360px;
+		margin-left: 2px;
+	}
+	#face{
+		width: 48px;
+		height: 48px;
+		border-radius: 14px;
+		background-image: url("new_images2/socialmediaicons18.jpg");
+		background-position: 175px 246px, center;
+		background-size: 360px;
+	}
+	#shareLinks{
+		position: absolute;
+		/*display: flex;
+    	flex-direction: row;*/
+    	top: 482px;
+    	left: 0px;
+	}
+	#shareLinks div{
+		margin-left: 0px;
+	}
+	</style>
+    <!-- end thumb styles -->
+<!-- #exec cgi="/menu/menu.pl?uri=/wide/t_home.htm" -->
+<div id="fb-root"></div>
+<div id="theMain" style="position:relative; left:50%; top:-10px; margin-left:-490px; width:980px; height:1000px">
+<!--
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d8107d30eee5bd6"></script>
+<div class="addthis_toolbox addthis_default_style"  style="position: absolute; left: 830px; top: 6px; width: 150px; z-index: 550; text-align:right; margin-top:0px !important; margin-left:0px !important;">
+		<a class="addthis_button_preferred_2"></a>
+		<a class="addthis_button_preferred_3"></a>
+		<a class="addthis_button_preferred_4"></a>
+		<a class="addthis_button_preferred_5"></a>
+		<a class="addthis_button_preferred_6"></a>
+		<a class="addthis_button_compact"></a>
+		<a class="addthis_button_preferred_1"></a>
+		<a class="addthis_button_preferred_2"></a>
+		<a class="addthis_button_preferred_3"></a>
+		<a class="addthis_button_preferred_4"></a>
+		<a class="addthis_button_compact"></a>
+		<a class="addthis_counter addthis_bubble_style"></a>
+  </div>
+-->
+<div id="header">
+	<img src="images/header_back.png" alt="" />
+	<p id="title">SPRING 2016 ONLINE PREVIEW</p>
+	<p id="subtext">AN INSIDE LOOK AT OUR NEW BOOKS FOR ALL AGES</p>
+</div>
+
+<!-- http://docs.brightcove.com/en/video-cloud/smart-player-api/solutions/tabbed-playlist.html -->
+
+<!-- <img id="mainVideo" src="new_images2/slideshow_background.png" width="980" height="310" style="position:absolute; left:0px; top:139px; cursor:pointer" /> -->
+<!-- <div id="slideHolder" style="position:absolute; left:11px; top:139px; width:960px; height:310px; z-index:250; overflow:hidden"> -->
+  <!--<img src="new_images2/slide1.jpg" width="960" height="310" />
+</div>
+<img id="leftArrow" src="new_images2/left_arrow.png" width="47" height="53" style="position:absolute; left:13px; top:253px; cursor:pointer; z-index:255; visibility:hidden" />
+<img id="rightArrow" src="new_images2/right_arrow.png" width="47" height="53" style="position: absolute; left: 922px; top: 253px; cursor: pointer; z-index: 255; visibility: hidden" />-->
+<div id="buttonHolder" style="position:absolute; left:1px; top:792px; width:980px; height:74px; background-image:url(new_images2/button_background.png); z-index:1000;">
+  <img class="catalogButton" src="new_images2/catalog3.png" width="228" height="74" style="position: absolute; left: 11px; top: 0px; cursor: pointer" />
+  <img class="orderButton" src="new_images2/orderform3.png" width="266" height="74" style="position:absolute; left:239px; top:0px; cursor:pointer" />
+  <img class="faqButton" src="new_images2/faq3.png" width="214" height="74" style="position:absolute; left:505px; top:0px; cursor:pointer" />
+  <!--<img src="new_images2/giveaway4.png" width="252" height="74" style="position:absolute; left:719px; top:0px;" />-->
+  <div style="position:absolute; left:719px; top:0px; width:252px; height:74px; background-image:url(new_images2/giveaway4.png)">
+  <div class='share-button share-button-left' style="z-index:1000; margin-left:47px; margin-top:23px; width:150px;"></div>
+  </div>
+</div>
+<!--
+<div id="buttonHolder" style="position:absolute; left:0px; top:450px; width:980px; height:93px;">
+  <img id="catalogButton" src="new_images/catalog.jpg" width="347" height="93" style="position:absolute;left:0px; top:0px; cursor:pointer" />
+  <img id="orderButton" src="new_images/order_form.jpg" width="321" height="93" style="position:absolute;left:347px; top:0px; cursor:pointer" />
+  <img id="faqButton" src="new_images/faq.jpg" width="312" height="93" style="position:absolute;left:668px; top:0px; cursor:pointer" />
+</div>
+-->
+
+<a href="https://www.facebook.com/thisisteen" target="_blank"><img id="theisteen" src="new_images2/thisisteen.png" width="252" height="43" border="0" style="position:absolute; left:676px; top:872px; cursor:pointer; z-index:2" /></a>
+<div id="bottomHolder" style="position:absolute; left:0px; top:160px; width:980px; height:812px; background-image:url(new_images2/large_background_crop_.png)">
+
+	<div id="mainVideo">
+			<div class="buttons-wrapper" id="tabName"> 
+				<a href="#" data-playlist="4495255589001" class="tab-launcher _active"><span id="tabName1"></span></a>
+				<a href="#" data-playlist="4495255592001" class="tab-launcher"><span id="tabName2"></span></a>
+				<a href="#" data-playlist="4495255591001" class="tab-launcher"><span id="tabName3"></span></a>
+				<a href="#" data-playlist="4495255590001" class="tab-launcher"><span id="tabName4"></span></a>
+			</div>
+			<div id="outerContainer">
+			<div id="videoWrapper">
+
+			    <!-- Start of Brightcove Player -->
+			    <div style="display:none"></div>
+
+			    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+			    <object id="myExperience922656010001" class="BrightcoveExperience">
+				<param name="bgcolor" value="#FFFFFF" />
+				<param name="width" value="708" />
+				<param name="height" value="408" />
+				<param name="playerID" value="4609620066001" />
+				<param name="playerKey" value="AQ~~,AAAAAFv844g~,BASb5BU03X_lI4WdDJ2CqYMXw_2kSnae" />
+				<param name="isVid" value="true" />
+				<param name="isUI" value="true" />
+				<param name="dynamicStreaming" value="true" />
+				<param name="@videoPlayer" value="922656010001" />
+				<!-- smart player api params -->
+				<param name="includeAPI" value="true" />
+				<param name="templateLoadHandler" value="onTemplateLoad" />
+				<param name="templateReadyHandler" value="onTemplateReady" />
+			    </object>
+			    <!--
+				This script tag will cause the Brightcove Players defined above it to be created as soon
+				as the line is read by the browser. If you wish to have the player instantiated only after
+				the rest of the HTML is processed and the page load is complete, remove the line.
+			    -->
+			    <script type="text/javascript">
+				brightcove.createExperiences();
+			    </script>
+			    <!-- End of Brightcove Player -->
+
+			</div>
+			
+			</div>
+			
+		<div id="tab_container" class="tabs-hide">
+				<div id="tabs">
+				    <div id="tab-data">
+					    <div id="tabs1">
+				                <p><span id="tabData1"></span></p>
+					    </div>
+					    <div id="tabs2">
+				                <p><span id="tabData2"></span></p>
+					    </div>
+					    <div id="tabs3">
+				                <p><span id="tabData3"></span></p>
+					    </div>
+					    <div id="tabs4">
+				                <p><span id="tabData4"></span></p>
+					    </div>
+				    </div>
+		        </div>
+		   
+		</div>
+		<div id="videoInfo">
+		<!--video info diplay area-->
+		</div>
+		<!-- <div id="shareLinks" class="addthis_native_toolbox"></div> -->
+		<div id="shareLinks" class="addthis_toolbox addthis_default_style addthis_20x20_style">
+        </div>
+	</div>
+
+  <img class="twitter" id="scholastic" src="new_images2/twitter_scholastic.png" width="110" height="43" style="left:163px;" />
+   <img class="twitter" id="this_is_teen" src="new_images2/twitter_this_is_teen.png" width="129" height="43" style="left:273px;" />
+   <img class="twitter" id="AALBooks" src="new_images2/twitter_aalbooks.png" width="108" height="43" style="left:402px;" />
+  <img class="twitter" id="chickenhsebooks" src="new_images2/twitter_chickenhsebooks.png" width="165" height="43" style="left:510px;" />
+  <img class="twitter" id="GraphixBooks" src="new_images2/twitter_graphixbooks.png" width="137" height="43" style="left:675px;" />
+  <img class="twitter" id="DFB_storyhouse" src="new_images2/twitter_dfb.png" width="155" height="43" style="left:812px;" />
+</div>
+</div>
+<div id="lpFAQ">
+<div class="frame_top"></div>
+<div class="frame_inner">
+	<div class="close"><img src="images/frame_close.gif" alt="Close" width="60" height="21" border="0" /></div>
+	<div class="content">
+    <div class="contentInner">
+    <img src="images/logo.gif" alt="Scholastic" width="188" height="22" class="logo" />
+    <h3>LIBRARIAN PREVIEW FREQUENTLY ASKED QUESTIONS</h3>
+
+    <h4>ABOUT THESE PREVIEWS IN GENERAL</h4>
+
+	<p><em><strong>Will there be more librarian previews like this?</strong></em></p>
+
+	<p>Yes, we plan to do two previews per year, in Spring and Fall.  The date of the next preview will be posted here as soon as available.</p>
+
+
+	<h4>ABOUT ORDERING THE BOOKS</h4>
+
+	<p><em><strong>Can I preorder any of the books featured in the preview?</strong></em></p>
+
+	<p>Sure!  Just fill out the order form and send it to Scholastic:<br />
+	By mail:  Scholastic Library Publishing, PO Box 3765, Jefferson City, MO 65102<br />
+	By fax: (866) 783-4361<br />
+	By email:  <a href="mailto:slpservice@scholastic.com">slpservice@scholastic.com</a><br />
+	For customer service, call toll-free (800) 621-1115<br />
+	In Canada, visit <a href="http://www.scholastic.ca/">www.scholastic.ca</a></p>
+
+	<p>You can also send the order form to any library vendor of your choice.<br />
+	Books will be sent when available.</p>
+
+	<p><em><strong>Are the prices listed for each title discounted for libraries?</strong></em></p>
+
+	<p>No, the prices in the catalog and order form are the full “list” price for each book.  When you order, you will receive whatever discount your vendor offers to libraries.  If ordering direct from Scholastic Library Publishing (see above), you will receive 40% discount on “trade” titles.</p>
+
+	<p><em><strong>Will the previewed books be available through Scholastic’s book fair catalog, so we can use our Scholastic dollars?</strong></em></p>
+
+	<p>The titles presented in our preview are new titles from our “trade” publishing imprints.  Some of them may be available through Scholastic’s bookfair catalogs at a later time.</p>
+
+
+	<h4>PROMOTION AND PUBLICITY</h4>
+
+	<p><em><strong>Can I get ARCs of any of these titles?  Can I get onto your catalog mailing list?</strong></em></p>
+
+	<p>Email your requests, describing your specific needs, to <a href="mailto:jmason@scholastic.com">jmason@scholastic.com</a></p>
+
+	<p><em><strong>How do I arrange for any of your  authors/illustrators to visit my library?</strong></em></p>
+
+	<p>Please visit <a href="http://www.scholastic.com/authorvisits">www.scholastic.com/authorvisits</a> for full details and a request form.</p>
+
+
+	<h4>HELP!</h4>
+
+	<p><em><strong>My question isn’t addressed in this FAQ – whom do I contact?</strong></em></p>
+
+	<p>Send your question to John Mason, Director of Library and Educational Marketing, at <a href="mailto:jmason@scholastic.com">jmason@scholastic.com</a></p>
+
+	</div>
+    </div>
+</div>
+<div class="frame_btm"></div>
+</div>
+<script type="text/javascript">
+	var player,
+	    APIModules,
+	    videoPlayer,
+	    contentModule,
+	    // array of playlist IDs - substitute your list of playlist IDs
+	    //playlistIds = [1323984733001, 1323984734001, 1323984733001, 1323984734001],
+	    playlistIds = [4495255589001, 4495255592001, 4495255591001, 4495255590001],
+	    numberPlayerIds = playlistIds.length,
+	    obj = {},
+	    videoDTO = {},
+	    str,
+	    str2,
+	    script,
+	    anchor,
+	    customName,
+	    duration,
+	// utilities
+	logit = function (context, message) {
+	    if (console) {
+		console.log(context, message);
+	    }
+	};
+
+	// initialize playlist data array
+	obj.playlistsData = [];
+	function onTemplateLoad(experienceID) {
+	    // logit("EVENT", "onTemplateLoad");
+	    player = brightcove.api.getExperience(experienceID);
+	    APIModules = brightcove.api.modules.APIModules;
+	};
+	function onTemplateReady(evt) {
+	    logit("EVENT", "onTemplateReady");
+	    videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+	    contentModule = player.getModule(APIModules.CONTENT);
+	    // get video data for current video
+ 	    getVideoData()
+	    // get the data for each playlist in the array
+	    getPlaylistsData(0);
+	    videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, onComplete);
+
+	};
+
+    function onComplete(evt) {
+		var $currentVideo = $('.playlist-item.selected'),
+			$nextVideo = $currentVideo.next();
+
+			$nextVideo.click();
+	}
+
+	/**** retrieves the playlists from the Video Cloud service
+	* because the calls are asynchronous,
+	* this function needs to keep calling itself
+	* until it has looped over the entire playlist ids array ****/
+	function getPlaylistsData(counter) {
+	    // logit("function", "getPlaylistsData");
+	    contentModule.getPlaylistByID(playlistIds[counter], function (playlistDTO) {
+		// add playlist data to master array
+		obj.playlistsData.push(playlistDTO);
+		if (counter < numberPlayerIds - 1) {
+		    // not done yet, function increments the counter and recalls itself
+		    counter++;
+		    getPlaylistsData(counter);
+		} else {
+		    // now we're done, buid the playlist display
+		    buildPlaylistDisplay();
+		}
+	    });
+	    
+	};
+
+	function buildPlaylistDisplay() {
+	    // logit("function", "buildPlaylistDisplay");
+	    // create the video thumbnail links and write it into the HTML
+
+	    str = "";
+	    var current_tab, current_data;
+	    for (var i=0; i<numberPlayerIds; i++) {
+		//current_tab = "tabName" + (i+1);
+		current_tab = "tabName" + (i+1);
+		document.getElementById(current_tab).innerHTML = obj.playlistsData[i].displayName;
+		for (var j in obj.playlistsData[i].videos) {
+					str += "<div class='playlist-item' id='video"+obj.playlistsData[i].videos[j].id+"' onClick=' playVideo(" + obj.playlistsData[i].videos[j].id + "); ChangeUrl("+ obj.playlistsData[i].videos[j].id +");'><img id='thumb' src='" + obj.playlistsData[i].videos[j].videoStillURL +
+						"' /><div id='playlist-caption'><span><p>" +
+						obj.playlistsData[i].videos[j].displayName + "</p></span></div></div>";
+				}
+		
+		current_data = "tabData" + (i+1);
+		document.getElementById(current_data).innerHTML = str;
+		document.getElementById("tab_container").className = "tabs-show";
+		str = "";
+	    }
+	    if (location.hash.length <= 0){ 
+		    $("#tabName1").trigger("click");
+		    $('#tabData1 .playlist-item').eq(0).trigger('click');
+	    }else{  
+	    	executeVideo();
+	    }
+	};
+	function ChangeUrl(videoID){
+		//get tab data
+		var tab = $('._active').attr("data-playlist");
+		//replace url
+		window.location.hash = tab+"/"+videoID;
+		
+		
+	}
+	//when the video is called from social
+	function executeVideo(){
+		var url = location.hash.split('/');
+		var tab = url[0];
+		switch (tab){
+			case '#4495255589001':
+				$("#tabName1").trigger("click");
+				//console.log("picture");
+				break;
+			case '#4495255592001':
+				$("#tabName2").trigger("click");
+				//console.log("middle");
+				break;
+			case '#4495255591001':
+				$("#tabName3").trigger("click");
+				//console.log("graphic");
+				break;
+			case '#4495255590001':
+				$("#tabName4").trigger("click");
+				//console.log("teen");
+				break;
+			default:
+			console.log("the tab doesn't exist");
+		}
+		var videoID = url[url.length-1];
+		playVideo(videoID);
+		window.location.hash = tab+"/"+videoID;
+		
+	}
+	function getVideoData() {
+	    logit("function", "getVideoData");
+	    // get video data
+	    videoPlayer.getCurrentVideo(function (videoDTO) {
+		// display video fields
+		str = "<p><h3><b>" + videoDTO.displayName + "</b></h3></p>";
+		str += "<br />"
+		str += "<p>" + videoDTO.shortDescription + "</p>";
+						
+		document.getElementById("videoInfo").innerHTML = str;
+		var link = location.href;
+
+		//$('shareLinks').html('').show();
+
+		var addthiss = encodeURI("//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-535a71050fa182f2");
+		script = $('<script><\/script>',{
+			src : addthiss,
+			id  : 'shareame'	
+		});
+		var anchor = $('<a><\/a>',{
+			class : 'addthis_counter_facebook',
+			'data-url' : link
+		});
+		var anchor1 = $('<a><\/a>',{
+			class : 'addthis_button_tweet',
+			'tw:url': link
+		});
+		var anchor2 = $('<a><\/a>',{
+			class : 'addthis_button_google_plusone',
+			'g:plusone:size':'medium'
+		});
+		var anchor3 = $('<a><\/a>',{
+			class : 'addthis_button_pinterest_pinit',
+			'pi:pinit:url': link,
+			'pi:pinit:description': videoDTO.shortDescription
+		});
+		
+		var result = $('<div><\/div>',{
+			id : 'shareLinks',
+			class : 'addthis_toolbox addthis_default_style addthis_20x20_style'
+		});
+		$("#shareLinks").html("");
+		//setTimeout(function(){     }, 300);
+		$('#shareLinks').append(script, anchor, anchor1, anchor2, anchor3);
+		
+		addthis.toolbox(".addthis_toolbox");
+
+	    });
+	};
+	
+	var loading = false;
+	var timeout;
+	function playVideo(videoid) {
+		if(!loading){
+			loading = true;
+		    // play selected video
+		    if (videoPlayer.canPlayWithoutInteraction()) {
+		    //remove previuos selected videos
+		    $('#tab-data > div > p > span > div').removeClass('selected');
+		    //adding the selected class
+		    document.getElementById("video"+videoid).className+=" selected";
+		    videoPlayer.loadVideoByID(videoid);
+		    
+		    } else {
+			videoPlayer.cueVideoByID(videoid);
+		    }
+		    // get data for current video
+		    getVideoData();
+		    if(timeout){
+		    	clearTimeout(timeout);
+		    }
+		    timeout = setTimeout(function(){
+		    	loading = false;
+		    }, 2000);
+			//videoPlayer.getIsPlaying(function(){
+			//	loading=false;
+			//});
+		}
+	};
+</script>
+<!-- #exec cgi="/menu/footer.pl?uri=/wide/t_home.htm" -->
+</body>
+</html>
